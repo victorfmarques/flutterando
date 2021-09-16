@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 const _inputEmailLabel = 'Email';
 const _inputPasswordLabel = 'Password';
 
@@ -24,6 +26,13 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  child: Image.asset('assets/images/logo.png'),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -51,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                   if (_emailController.text == 'victorfmarques@outlook.com' &&
                       _passwordController.text == '123') {
                     debugPrint('Usuário autenticado');
+                    Navigator.of(context).pushReplacementNamed('/home');
                   } else {
                     debugPrint('Credenciais incorretas');
                   }
